@@ -230,3 +230,37 @@ summarybyfakultas
 summarybyfakultas$tahun = as.factor(summarybyfakultas$tahun)
 
 ggplot(summarybyfakultas, aes(x=fakultas, y=jumlah_mahasiswa)) + geom_bar(stat="identity", aes(fill=tahun), width=0.8, position=position_dodge(width=0.8)) + theme_classic()
+
+
+# PIE CHART
+library(ggplot2)
+library(openxlsx)
+# Membaca file mahasiswa.xlsx
+mahasiswa <- read.xlsx("https://storage.googleapis.com/dqlab-dataset/mahasiswa.xlsx", sheet="Sheet 1")
+# Menghitung jumlah data by fakultas
+summarybyfakultas <- aggregate(x=mahasiswa$JUMLAH, by=list(Kategori=mahasiswa$Fakultas), FUN=sum)
+summarybyfakultas <- setNames(summarybyfakultas, c("fakultas", "jumlah_mahasiswa"))
+
+piechart <- ggplot(summarybyfakultas, aes(x="", y=jumlah_mahasiswa, fill=fakultas)) + geom_bar(width=1, stat="identity")
+piechart <- piechart + coord_polar("y", stat=0)
+piechart <- piechart + ggtitle("Distribusi Mahasiswa per Fakultas")
+piechart <- piechart + scale_fill_brewer(palette="Blue") + theme_minimal()
+piechart <- piechart + guides(fill=guide_legend(title="Fakultas"))
+piechart <- piechart + ylab("Jumlah Mahasiswa")
+piechart
+
+
+# FILTERING
+library(ggplot2)
+library(openxlsx)
+# Membaca file mahasiswa.xlsx
+mahasiswa <- read.xlsx("https://storage.googleapis.com/dqlab-dataset/mahasiswa.xlsx", sheet="Sheet 1")
+# Menghitung jumlah data by fakultas
+summarybyfakultas <- aggregate(x=mahasiswa$JUMLAH, by=list(Kategori=mahasiswa$Fakultas, Tahun=mahasiswa$ANGKATAN), FUN=sum)
+summarybyfakultas <- setNames(summarybyfakultas, c("fakultas", "tahun", "jumlah_mahasiswa"))
+summarybyfakultas
+
+summarybyfakultas$tahun = as.factor(summarybyfakultas$tahun)
+summarybyfakultas[summarybyfakultas$fakultas %in% c("ICT", "Ilmu Komunikasi"),]
+
+ggplot(summarybyfakultas[summarybyfakultas$fakultas %in% c("ICT", "Ilmu Komunikasi"),], aes(x=fakultas, y=jumlah_mahasiswa)) + geom_bar(stat = "identity", aes(fill = tahun), width=0.8, position = position_dodge(width=0.8)) + theme_classic()
