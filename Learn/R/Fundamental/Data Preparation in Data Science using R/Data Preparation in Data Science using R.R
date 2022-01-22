@@ -90,3 +90,19 @@ is.nan(NA)
 
 
 # MENGHITUNG JUMLAH MISSING VALUES DARI SATU VECTOR
+# Masukkan code di bawah ini sesuai permintaan soal
+isi.vector <- c(1,2,NA,4,5,NaN,6)
+sum(is.na(isi.vector) == TRUE)
+
+
+
+# MEMBUAT FACTOR DI R
+# Buatlah factor dengan isi nilai teks "Jan", "Feb", dan "Mar"
+factor(c("Jan", "Feb", "Mar"))
+
+
+
+# ATRIBUT LEVELS DAN CLASS PADA FACTOR
+# Variable factor bernama faktor.bulan dengan nilai teks "Jan", "Feb", dan "Mar"
+faktor.bulan <- factor(c("Jan","Feb","Mar"))
+attributes(faktor.bulan)
