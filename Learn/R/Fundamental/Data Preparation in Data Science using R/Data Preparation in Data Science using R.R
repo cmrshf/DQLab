@@ -106,3 +106,38 @@ factor(c("Jan", "Feb", "Mar"))
 # Variable factor bernama faktor.bulan dengan nilai teks "Jan", "Feb", dan "Mar"
 faktor.bulan <- factor(c("Jan","Feb","Mar"))
 attributes(faktor.bulan)
+
+
+
+# FUNCTION LEVELS DAN CLASS PADA FACTOR
+# Variable factor bernama faktor.bulan dengan nilai teks "Jan", "Feb", dan "Mar"
+faktor.bulan <- factor(c("Jan","Feb","Mar"))
+levels(faktor.bulan)
+class(faktor.bulan)
+
+
+
+# PERULANGAN NILAI PADA FACTOR
+#Buatlah factor dengan teks "Jan", "Feb", "Mar","Jan","Mar", dan "Jan"
+factor(c("Jan", "Feb", "Mar", "jan", "Mar", "Jan"))
+
+
+
+# PENGGUNAAN AS.INTEGER PADA FACTOR
+# Buatlah factor dengan teks "Jan", "Feb", "Mar","Jan","Mar", dan "Jan"
+factor.bulan <- factor(c("Jan","Feb","Mar","Jan","Mar","Jan"))
+as.integer(factor.bulan)
+
+
+
+# MENGGANTI "JAN" MENJADI "JANUARI"
+# Buatlah factor dengan teks "Jan", "Feb", "Mar","Jan","Mar", dan "Jan"
+factor.bulan <- factor(c("Jan","Feb","Mar","Jan","Mar","Jan"))
+# Mengganti levels 
+levels(factor.bulan)[2] <- "Januari"
+levels(factor.bulan)[3] <- "Maret"
+factor.bulan
+
+
+
+# ANGKA SEBAGAI KATEGORI
