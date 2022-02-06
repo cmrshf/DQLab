@@ -141,3 +141,33 @@ factor.bulan
 
 
 # ANGKA SEBAGAI KATEGORI
+# Buatlah factor bernama factor.umur dengan isi c(12, 35, 24, 12, 35, 37)
+factor.umur <- factor(c(12, 35, 24, 12, 35, 37))
+# Tampilkan variable factor.umur
+factor.umur
+
+
+
+# NA, NaN, NULL PADA SAAT PEMBENTUKAN FACTOR
+# Buatlah variable factor.lokasi dengan isi berupa vector c("Bandung", "Jakarta", NA, "Jakarta", NaN, "Medan", NULL, NULL, "Bandung")
+factor.lokasi <- factor(c("Bandung", "Jakarta", NA, "Jakarta", NaN, "Medan", NULL, NULL, "Bandung"))
+#Tampilkan factor.lokasi
+factor.lokasi
+
+
+
+# MENGHITUNG PANJANG FACTOR DENGAN LENGTH
+# Buatlah variable factor.lokasi dengan isi berupa vector c("Bandung", " Jakarta", NA, "Jakarta", NaN, "Medan", NULL, NULL, "Bandung") 
+factor.lokasi <- factor(c("Bandung", "Jakarta", NA, "Jakarta", NaN, "Medan", NULL, NULL, "Bandung"))
+# Tampilkan panjang dari variable factor.lokasi
+length(factor.lokasi)
+
+
+
+# MENYUSUN LEVELS DARI AWAL
+# Variable factor dengan isi vector c("Jan","Feb","Mar","Jan","Mar") 
+factor(c("Jan","Feb","Mar","Jan","Mar"), levels = c("Jan", "Feb", "Mar"))
+
+
+
+# 
