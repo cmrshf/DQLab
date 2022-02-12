@@ -170,4 +170,43 @@ factor(c("Jan","Feb","Mar","Jan","Mar"), levels = c("Jan", "Feb", "Mar"))
 
 
 
-# 
+# MEMBACA DATASET CSV
+# Membaca dataset dengan read.csv dan dimasukkan ke variable penduduk.dki
+penduduk.dki <- read.csv("https://storage.googleapis.com/dqlab-dataset/dkikepadatankelurahan2013.csv", sep=",")
+penduduk.dki
+
+
+
+# PROFILE DATASET DENGAN FUNCTION STR
+# Membaca dataset dengan read.csv dan dimasukkan ke variable penduduk.dki
+penduduk.dki <- read.csv("https://storage.googleapis.com/dqlab-dataset/dkikepadatankelurahan2013.csv", sep=",")
+str(penduduk.dki)
+
+
+
+# PROFILE DATASET DENGAN FUNCTION SUMMARY
+# Membaca dataset dengan read.csv dan dimasukkan ke variable penduduk.dki
+penduduk.dki <- read.csv("https://storage.googleapis.com/dqlab-dataset/dkikepadatankelurahan2013.csv", sep=",")
+summary(penduduk.dki)
+
+
+
+# MENGGUNAKAN ARGUMEN CHECK.NAMES = FALSE
+#Membaca dataset dengan read.csv dan dimasukkan ke variable penduduk.dki
+penduduk.dki <- read.csv("https://storage.googleapis.com/dqlab-dataset/dkikepadatankelurahan2013.csv", sep=",", check.names = FALSE)
+str(penduduk.dki)
+
+
+
+# MEMBACA TAB SEPARATED VALUE (TSV)
+# Membaca dataset dengan read.csv dan dimasukkan ke variable penduduk.dki
+penduduk.dki <- read.csv("https://storage.googleapis.com/dqlab-dataset/dkikepadatankelurahan2013.tsv", sep="\t")
+penduduk.dki
+
+
+
+# MEMBACA DATASET FILE EXCEL DENGAN read.xlsx
+library(openxlsx)
+# Membaca dataset dengan read.xlsx dan dimasukkan ke variable penduduk.dki
+penduduk.dki.xlsx <- read.xlsx(xlsxFile="https://storage.googleapis.com/dqlab-dataset/dkikepadatankelurahan2013.xlsx")
+str(penduduk.dki.xlsx)
