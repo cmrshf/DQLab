@@ -210,3 +210,24 @@ library(openxlsx)
 # Membaca dataset dengan read.xlsx dan dimasukkan ke variable penduduk.dki
 penduduk.dki.xlsx <- read.xlsx(xlsxFile="https://storage.googleapis.com/dqlab-dataset/dkikepadatankelurahan2013.xlsx")
 str(penduduk.dki.xlsx)
+
+
+
+# FUNCTION NAMES
+# Membaca dataset csv
+penduduk.dki.csv <-read.csv("https://storage.googleapis.com/dqlab-dataset/dkikepadatankelurahan2013.csv", sep=",")
+# Menggunakan names untuk variable penduduk.dki.csv
+names(penduduk.dki.csv)
+
+
+
+# MERUBAH SATU NAMA KOLOM
+# Membaca dataset csv
+penduduk.dki.csv <-read.csv("https://storage.googleapis.com/dqlab-dataset/dkikepadatankelurahan2013.csv", sep=",")
+names(penduduk.dki.csv)[1] <- "PERIODE"
+names(penduduk.dki.csv)[2] <- "PROPINSI"
+names(penduduk.dki.csv)
+
+
+
+# MERUBAH SEJUMLAH NAMA KOLOM
